@@ -5,7 +5,6 @@ import {
   FaShieldAlt,
   FaRocket,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import heroImg from "../assets/godigital.jpeg"; // 👈 your image
 
 export default function WhyChooseUs() {
