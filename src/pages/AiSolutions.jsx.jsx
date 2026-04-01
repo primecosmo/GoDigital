@@ -13,6 +13,7 @@ export default function AiSolutions() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
   const services = [
     {
       icon: <FaRobot />,
@@ -47,11 +48,19 @@ export default function AiSolutions() {
   ];
 
   return (
-    <section className="bg-[#0A0A0A] text-white px-4 sm:px-10 lg:px-16 py-20 overflow-hidden relative">
+    <section className="bg-[#0F0F0F] text-white px-4 sm:px-10 lg:px-16 py-20 overflow-hidden relative">
 
-      {/* Glow Effects */}
-      <div className="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[#39FF14]/10 blur-[120px] sm:blur-[160px] top-0 left-1/2 -translate-x-1/2" />
-      <div className="absolute w-[200px] h-[200px] bg-[#39FF14]/10 blur-[120px] bottom-0 right-10" />
+      {/* Glow / Grid Background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
       {/* HERO */}
       <div className="text-center max-w-3xl mx-auto relative z-10">
@@ -61,17 +70,19 @@ export default function AiSolutions() {
           className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight"
         >
           AI & IT <br />
-          <span className="text-[#39FF14]">Solutions</span>
+          <span className="bg-gradient-to-r from-[#22C55E] to-[#4ADE80] bg-clip-text text-transparent">
+            Solutions
+          </span>
         </motion.h1>
 
-        <p className="text-[#B0B0B0] mt-4 sm:mt-6 text-sm sm:text-base leading-relaxed">
+        <p className="text-[#D1D5DB] mt-4 sm:mt-6 text-sm sm:text-base leading-relaxed">
           Transform your business with cutting-edge AI technologies and modern
           IT solutions designed to automate, optimize, and scale your operations.
         </p>
 
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="mt-6 sm:mt-8 w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-[#39FF14] text-black px-6 sm:px-8 py-3 rounded-full font-semibold shadow-[0_0_15px_rgba(57,255,20,0.4)]"
+          className="mt-6 sm:mt-8 w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-[#22C55E] text-black px-6 sm:px-8 py-3 rounded-full font-semibold shadow-[0_0_15px_rgba(34,197,94,0.4)]"
         >
           Explore AI Solutions <FaArrowRight />
         </motion.button>
@@ -83,9 +94,9 @@ export default function AiSolutions() {
           <motion.div
             key={i}
             whileHover={{ scale: 1.1 }}
-            className="p-3 sm:p-4 bg-[#111] rounded-lg border border-[#1E1E1E]"
+            className="p-3 sm:p-4 bg-[#171717] rounded-lg border border-[#2F2F2F]"
           >
-            <Icon className="text-xl sm:text-3xl text-[#39FF14]" />
+            <Icon className="text-xl sm:text-3xl text-[#22C55E]" />
           </motion.div>
         ))}
       </div>
@@ -98,9 +109,9 @@ export default function AiSolutions() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.03 }}
-            className="p-6 sm:p-8 bg-[#111] border border-[#1E1E1E] rounded-xl sm:rounded-2xl hover:shadow-[0_0_25px_rgba(57,255,20,0.2)] transition group"
+            className="p-6 sm:p-8 bg-[#171717] border border-[#2F2F2F] rounded-2xl hover:border-[#3F3F3F] transition group"
           >
-            <div className="text-[#39FF14] text-2xl sm:text-3xl mb-3 sm:mb-4">
+            <div className="text-[#22C55E] text-2xl sm:text-3xl mb-3 sm:mb-4">
               {item.icon}
             </div>
 
@@ -108,9 +119,9 @@ export default function AiSolutions() {
               {item.title}
             </h3>
 
-            <p className="text-[#888] text-xs sm:text-sm">{item.desc}</p>
+            <p className="text-[#D1D5DB] text-xs sm:text-sm">{item.desc}</p>
 
-            <button className="mt-4 text-[#39FF14] flex items-center gap-2 text-xs sm:text-sm">
+            <button className="mt-4 text-[#22C55E] flex items-center gap-2 text-xs sm:text-sm">
               Contact Us <FaArrowRight />
             </button>
           </motion.div>
@@ -120,19 +131,13 @@ export default function AiSolutions() {
       {/* FEATURES / BENEFITS */}
       <div className="mt-20 sm:mt-24 max-w-4xl mx-auto text-center relative z-10">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-10">
-          Why Choose <span className="text-[#39FF14]">Our AI Solutions</span>
+          Why Choose <span className="bg-gradient-to-r from-[#22C55E] to-[#4ADE80] bg-clip-text text-transparent">Our AI Solutions</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {[
-            "Automation & Efficiency",
-            "Scalable Infrastructure",
-            "Future-Ready Technology",
-          ].map((item, i) => (
-            <div key={i} className="p-5 bg-[#111] rounded-lg border border-[#1E1E1E]">
-              <p className="text-[#39FF14] text-sm sm:text-base font-semibold">
-                {item}
-              </p>
+          {["Automation & Efficiency", "Scalable Infrastructure", "Future-Ready Technology"].map((item, i) => (
+            <div key={i} className="p-5 bg-[#171717] rounded-xl border border-[#2F2F2F]">
+              <p className="text-[#22C55E] text-sm sm:text-base font-semibold">{item}</p>
             </div>
           ))}
         </div>
@@ -141,26 +146,22 @@ export default function AiSolutions() {
       {/* PROCESS */}
       <div className="mt-20 sm:mt-24 max-w-4xl mx-auto relative z-10">
         <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-10">
-          Our <span className="text-[#39FF14]">Approach</span>
+          Our <span className="bg-gradient-to-r from-[#22C55E] to-[#4ADE80] bg-clip-text text-transparent">Approach</span>
         </h2>
 
         <div className="space-y-6">
-          {["Analysis", "Planning", "Implementation", "Testing", "Optimization"].map(
-            (step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="border-l border-[#1E1E1E] pl-5 relative"
-              >
-                <span className="absolute -left-2 top-1 w-2 h-2 bg-[#39FF14] rounded-full" />
-                <h3 className="text-sm sm:text-base font-semibold">{step}</h3>
-                <p className="text-[#888] text-xs sm:text-sm">
-                  Smart execution for optimal results.
-                </p>
-              </motion.div>
-            )
-          )}
+          {["Analysis", "Planning", "Implementation", "Testing", "Optimization"].map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="border-l border-[#2F2F2F] pl-5 relative"
+            >
+              <span className="absolute -left-2 top-1 w-2 h-2 bg-[#22C55E] rounded-full" />
+              <h3 className="text-sm sm:text-base font-semibold">{step}</h3>
+              <p className="text-[#D1D5DB] text-xs sm:text-sm">Smart execution for optimal results.</p>
+            </motion.div>
+          ))}
         </div>
       </div>
 
@@ -172,11 +173,9 @@ export default function AiSolutions() {
           { num: "24/7", label: "System Monitoring" },
           { num: "100%", label: "Client Satisfaction" },
         ].map((stat, i) => (
-          <div key={i}>
-            <h3 className="text-xl sm:text-3xl text-[#39FF14] font-bold">
-              {stat.num}
-            </h3>
-            <p className="text-[#888] text-xs sm:text-sm">{stat.label}</p>
+          <div key={i} className="bg-[#171717] border border-[#2F2F2F] rounded-2xl p-4 sm:p-6 hover:border-[#3F3F3F] transition">
+            <h3 className="text-[#22C55E] text-xl sm:text-3xl font-bold">{stat.num}</h3>
+            <p className="text-[#D1D5DB] text-xs sm:text-sm">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -189,7 +188,7 @@ export default function AiSolutions() {
 
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="w-full sm:w-auto bg-[#39FF14] text-black px-8 py-3 rounded-full font-semibold shadow-[0_0_15px_rgba(57,255,20,0.4)]"
+          className="w-full sm:w-auto bg-[#22C55E] text-black px-8 py-3 rounded-full font-semibold shadow-[0_0_15px_rgba(34,197,94,0.4)]"
         >
           Get Started Now
         </motion.button>
