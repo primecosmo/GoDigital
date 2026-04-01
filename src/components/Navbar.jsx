@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import OverlayMenu from "./OverlayMenu.jsx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import logo from "../assets/gglogo.png"; // ✅ logo import
+import logo from "../assets/gglogo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function Navbar() {
   const services = [
     { name: "MERN STACK DEVELOPMENT", path: "/mern-service" },
     { name: "DIGITAL MARKETING & SEO", path: "/digital-marketing" },
-    { name: "SOCAILMEDIA MANAGEMENT", path: "/social-media" },
+    { name: "SOCIAL MEDIA MANAGEMENT", path: "/social-media" },
     { name: "AI & IT SOLUTIONS", path: "/ai-solutions" },
   ];
 
@@ -57,7 +57,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300
         ${visible ? "translate-y-0" : "-translate-y-full"}
-        bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-[#39FF14]/20`}
+        bg-[#0F0F0F]/95 backdrop-blur-xl border-b border-[#2F2F2F]`}
       >
         <div className="relative max-w-7xl mx-auto h-20 flex items-center justify-between px-4 sm:px-6">
 
@@ -69,15 +69,13 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Go Digital Logo"
-              className="h-20 w-auto object-contain
-              drop-shadow-[0_0_10px_rgba(57,255,20,0.5)]
-              hover:scale-105 transition"
+              className="h-16 w-auto object-contain hover:scale-105 transition"
             />
           </Link>
 
           {/* DESKTOP LINKS */}
           <div
-            className="hidden lg:flex items-center gap-10 text-[#B0B0B0] text-sm
+            className="hidden lg:flex items-center gap-10 text-[#D1D5DB] text-sm
             absolute left-1/2 -translate-x-1/2"
           >
             {["Home", "About"].map((item) => (
@@ -87,7 +85,7 @@ export default function Navbar() {
                 className="relative group hover:text-white transition"
               >
                 {item}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#39FF14] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#22C55E] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
 
@@ -99,21 +97,20 @@ export default function Navbar() {
             >
               <button className="relative group flex items-center gap-1 hover:text-white transition">
                 Services
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#39FF14] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#22C55E] transition-all duration-300 group-hover:w-full" />
               </button>
 
               {servicesDropdown && (
                 <div className="absolute top-full left-0 mt-3 w-64
-                bg-[#121212] backdrop-blur-xl
-                border border-[#1E1E1E]
-                rounded-2xl shadow-[0_0_30px_rgba(57,255,20,0.15)]
-                overflow-hidden">
+                bg-[#171717] backdrop-blur-xl
+                border border-[#2F2F2F]
+                rounded-2xl overflow-hidden">
                   {services.map((service, i) => (
                     <Link
                       key={i}
                       to={service.path}
-                      className="block px-6 py-4 text-[#B0B0B0]
-                        hover:bg-[#39FF14]/10 hover:text-[#39FF14] transition"
+                      className="block px-6 py-4 text-[#D1D5DB]
+                      hover:bg-[#22C55E]/10 hover:text-[#22C55E] transition"
                     >
                       {service.name}
                     </Link>
@@ -128,16 +125,15 @@ export default function Navbar() {
             <Link
               to="/contact"
               className="hidden sm:inline-flex px-6 py-2 rounded-xl
-              bg-[#39FF14] text-black font-semibold
-              shadow-[0_0_20px_rgba(57,255,20,0.4)]
-              hover:scale-105 transition"
+              bg-[#22C55E] hover:bg-[#16A34A]
+              text-black font-semibold transition"
             >
               Contact Us
             </Link>
 
             <button
               onClick={() => setMenuOpen(true)}
-              className="text-[#39FF14] text-3xl lg:hidden hover:scale-110 transition"
+              className="text-[#22C55E] text-3xl lg:hidden hover:scale-110 transition"
               aria-label="Open Menu"
             >
               <GiHamburgerMenu />
